@@ -1,0 +1,165 @@
+html{
+	background-color: grey;
+}
+body{
+
+}
+#badan{
+	height: 500px;
+	/*width: 500px;*/
+	margin: 0 auto;
+	font-size: 18px;
+	color: #fff;
+}
+
+#buttonsearch{
+	width: 50px;
+	float: left;
+	height: 25px;
+	margin-left: 5px;
+	border-radius: 5px 5px;
+}
+#inputsearch{
+	margin-left: 	5px;
+	width: 150px;
+	height: 20px;
+	border-radius: 5px 5px;
+	float: left;
+	
+}
+
+.buttoninsert {
+	border-radius:5px 5px;
+	color: #fff;
+	height: 25px;
+	width: 65px;
+	color:#fff;
+	background-color: silver;
+	
+	/*
+	margin-bottom: -10px;
+		border-left-style: solid;
+	border-right-style: solid;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	padding-left:4px; 
+	padding-right:4px;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	float: right;
+
+	padding-top: 2px;
+	border-top-style: solid;
+
+	margin-right: 100px;
+	*/
+}
+#buttonstudent{
+	height: 30px;
+	padding-right: 3px;
+	padding-left: 3px;
+	border-style: inset;
+		border-left-style: solid;
+	border-right-style: solid;
+	background-color: transparent ;
+	color:#776855;
+	margin-top: -3px;
+	padding-bottom: 3px;
+}
+#coba{
+height: 50px;
+width: 50px;
+	border-style: outset;
+	border-bottom-style: ridge;
+	background-color: silver;
+		border-radius: 350px 300px  20px;
+	padding-top: 30px;
+	color:#776855;	
+}
+#buttonstudent:hover{
+	height: 25px;
+	background-color: orange;
+	border-style: outset;
+	font-weight: bold;
+	color:#776855;
+}
+.buttoninsert:hover{
+	background-color: orange;
+	border-style: inset;
+	color:#776855;
+}
+.buttoninsert a:hover {
+	color: #fff;
+	font-weight: bold;
+}
+.thead{
+	background-color: #fff;
+	font-weight: bold;
+	height: 35px;
+	color:#776855;
+	font-size: 20px;
+	text-align: center;
+}
+.tbody{
+	color:#776855;
+	font-style: Arial;
+	font-size: 15px;
+	border-bottom-style: outset;
+	text-align: center;
+}
+.tbody:hover {
+	background-color: #fff;
+}
+#button{
+	border-bottom-color: orange;
+	color:#fff;
+	font-size: 18px;
+	font-style: italic;
+	background-color: silver;
+	margin-top: 5px;
+	padding-right:7px; 
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border: solid;
+	padding-left:7px;
+	margin-bottom: 10px;
+}
+#labelnim{
+	padding-left: 5px;
+	padding-right: 20px;
+	width: 30px;
+	height: 20px;
+	font-size: 20px;
+}
+.inputnim{
+	border-radius: 5px 5px;	
+	padding-right: 20px;
+	float: right;
+	width: auto 70%;
+	height: 20px;
+	font-size: 20px;	
+}
+#buttonaction {
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 5px;	
+	height: 20px;
+	text-align: center;
+}
+#buttonaction:hover {
+	font-weight: bold;
+	cursor: progress;
+	text-decoration: none;
+	font-size: 18px;
+	padding-top: 1px;
+	padding-bottom: 6px;
+	padding-left: 4px;
+	margin-bottom: 1px;
+	padding-right: 4px;
+	height: 15px;
+	text-align: center;
+	background-color: orange;
+	border-radius: 7px 0;
+}

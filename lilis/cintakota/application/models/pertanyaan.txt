@@ -1,0 +1,7 @@
+1. memanggil list berita sesuai penulis
+2. menampilkan profil reporter sesuai username saat login
+3. nampilin nama rep / red sesuai username (home selamat datang)
+4. kontak
+5. pagination
+6. validasi data masih kosong
+7.update password lama baru

@@ -1,0 +1,173 @@
+<?php 
+ class belanja extends CI_controller {
+ function __construct(){
+	parent::__construct();
+	$this->load->helper('form');
+	$this->load->model('membeli','',TRUE);
+	$this->load->library('session');
+	}
+
+	// tampilan pertama kali
+	public function index()
+	{
+		$data['list_brg']=$this->membeli->get_list_data();
+		$this->load->view('home',$data);
+	}
+
+	//menampilkan detail barang
+	public function view_detail(){
+	$vid = $this->uri->segment(3);
+	$data['row_data'] = $this->membeli->get_detail_data($vid);
+	$this->load->view('detail',$data);
+	}
+
+	//confirmasi pesanan yang masuk daftar
+
+
+	// berhubungan dengan session
+	// barang dipilih dengan session untuk dipesan
+	function frontend_pesan($vid=""){
+		if(!empty($vid)){ //Jika $vid tidak kosong
+			$barang = $this->membeli->get_detail_data($vid);
+			if(!($this->session->userdata('pesanan'))){//jika variabel pesanan masih kosong
+				$newdata = array('pesanan' => array(array($barang->kode_barang,$barang->nama_barang,$barang->gambar_i,$barang->harga_barang,1)) );
+				$this->session->set_userdata($newdata);
+			}else{//jika variabel session pesanan sudah pernah terisi dengan data pesanan sebelumnya
+				$pesanan = $this->session->userdata('pesanan');
+
+				//check apakah id yang baru sudah ada pada shopping cart
+				$status_sama=0;//0 berarti : tidak ada duplikasi data barang
+				$pesanan = $this->session->userdata('pesanan');
+				$i=1;
+				foreach ($pesanan as $index => $data) {
+					if ($vid==$pesanan[$index][0])
+						{
+							$status_sama=1;
+						}
+						// $data[$i]=$barang->kode_barang; // echo ($pesanan[$i][0]);
+						// echo $data[$i];
+						// $i=$i+1;
+				}
+				// break;
+
+				if ($status_sama==0){//tidak ada barang di shopping cart yang sama dengan barang yang baru dipikih -->tambahkan data ke shopping cart
+					array_push($pesanan,array($barang->kode_barang,$barang->nama_barang,$barang->gambar_i,$barang->harga_barang,1) );
+					$newdata = array('pesanan' => $pesanan );
+					$this->session->set_userdata($newdata);
+				}
+
+				// echo $barang->kode_barang; #ini keluar 1 item saja
+					
+
+					foreach($pesanan as $index => $data)
+					{
+					$kode= $data[0];
+					$nama= $data[1]; 
+					echo $kode,$nama;
+					}
+
+
+
+
+
+
+				}
+		}
+		$data['pesanan']=$this->session->userdata('pesanan');
+		$this->load->view('shopping_cart',$data);
+	}
+
+		function transaksi(){
+
+		$this->input->post('submit');
+		// $result = array_chunk($pesanan,2 );
+		// var_dump($result);
+
+		// echo $result;
+// foreach($pesanan as $index => $data)
+// 					{
+// 						$kode= $data[0];
+// 					}
+// 		$n=4;
+// 		$i=0;
+// 		while ($i<= $n) {
+			
+// 					$vkode=$kode[$i];
+// 					$this->membeli->input_trx($vkode);
+// 					echo $vkode;
+// 					// $i=1;
+// 					$i=$i+1;
+// 			}
+
+// 		$kk=$this->session->userdata('barang');
+// echo $kk;
+		$i=1;
+		// echo $nama[$i];
+		
+		// $_brg=$this->input->post('nama_barang');
+		// echo $nama;
+
+		// $this->session->userdata('pesanan');
+		//  $n=$pesanan(count($_SESSION['kode_barang']));
+		//  echo $n;
+		// $n=8;
+		// $i=1;
+		// $vkode[$i]= $this->session->userdata('pesanan',0);
+		// $vnama[$i]= $this->session->userdata('pesanan',1);
+		// echo $vnama;
+		// $vgm[$i]= $this->session->userdata('pesanan',2);
+		// $vharga[$i]= $this->session->userdata('pesanan',3);
+		#$pesanan->index[3];
+		// #$vjumlah= ($vharga)*1;
+
+			// while ($i<= $n) {
+			// 	$kode=$vkode[$i];
+			// 	$nama=$vnama[$i];
+			// 	$gm=$vgm[$i];
+			// 	$harga=$vharga[$i];
+	  // 			$this->membeli->input_trx($kode,$nama,$gm,$harga);
+			// 	$i=$i+1;
+			// }
+	  		// $this->load->view('transaksi');
+	 		 // redirect('belanja/')
+				// $n=5;
+				// $i=1;
+				// while ($i<= $n) {
+		// 		
+		// 		$nama=$vnama[$i];
+		// 		$gm=$vgm[$i];
+		// 		$harga=$vharga[$i];
+	 //  			
+				$i=1;
+				$kode[$i]=(
+					foreach ($pesanan as $index => $data) {
+						$data[0];
+					});
+				$nama[$i]=(
+					foreach ($pesanan as $index => $data) {
+						$data[1];
+					});
+
+				// $i=$i+1;
+				$this->membeli->input_trx($kode,$nama,$gm,$harga);
+				// }	
+				echo $kode[1];
+
+		}
+
+	function destroy(){
+		$pesanan = $this->session->userdata('pesanan');
+		unset($pesanan[2]);
+		$this->session->set_userdata('pesanan',$pesanan);
+		redirect ('belanja/frontend_pesan','refresh');
+	}
+
+	//menghapus semua data session
+	function destroyall(){
+		$this->session->unset_userdata('pesanan',0);
+		session_destroy();
+			redirect ('belanja/frontend_pesan','refresh');
+	}
+
+}
+?>

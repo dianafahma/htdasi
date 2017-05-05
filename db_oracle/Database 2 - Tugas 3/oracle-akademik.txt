@@ -1,0 +1,36 @@
+============ Login sebagai SYSTEM ============ 
+
+-- Create Tablespace
+CREATE TABLESPACE akademik_ts DATAFILE 'c:/akademik.dbf' SIZE 100M;
+
+-- Create User
+CREATE USER admin_akademik IDENTIFIED BY "p4$$woRd";
+
+-- Grant User
+GRANT CREATE SESSION, CREATE ANY TABLE, ALTER ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, SELECT ANY TABLE, UPDATE ANY TABLE, DELETE ANY TABLE TO admin_akademik;
+
+-- Set User's Default Tablespace
+ALTER USER admin_akademik DEFAULT TABLESPACE akademik_ts;
+
+-- Set User's Quota
+ALTER USER admin_akademik QUOTA UNLIMITED ON akademik_ts;
+
+
+============ Login sebagai admin_akademik ============ 
+
+-- Create Program Studi Table
+CREATE TABLE program_studi (
+	kode_prodi VARCHAR2(5) NOT NULL,
+	nama_prodi VARCHAR2(100) NOT NULL,
+	CONSTRAINT pk_program_studi PRIMARY KEY(kode_prodi)
+);
+
+-- Insert data Program Studi;
+INSERT ALL 
+INTO program_studi(kode_prodi,nama_prodi) VALUES('ADP','Application Development Professional')
+INTO program_studi(kode_prodi,nama_prodi) VALUES('WDP','Web Development Professional')
+INTO program_studi(kode_prodi,nama_prodi) VALUES('NAP','Network Administration Professional')
+INTO program_studi(kode_prodi,nama_prodi) VALUES('CMP','Creative Multimedia Professional')
+INTO program_studi(kode_prodi,nama_prodi) VALUES('GDP','Graphic Design Professional')
+SELECT * FROM DUAL;
+	

@@ -1,0 +1,105 @@
+#container{
+	background-color:#ffcc00;
+	width:1200px;
+	font-family: arial, verdana,tahoma;
+	border:1px solid #ffddcc;
+}
+#header{
+	background-color:#eaf1f1;
+	height:50px;
+	width:1200px;
+	border:1px solid #ffddcc;
+	float:left;
+}
+#menu{
+	background-color:#178acc;
+	color:#ffffff;
+	height:50px;
+	width:1200px;
+	border:1px solid #ffddcc;
+	float:left;
+}
+	ul#nav{
+	margin:5px 0 5px 0;
+	display:block;
+	background-color:#cccfff;
+	width:200px;
+	float:left;
+	height:25px;
+	
+	}
+	ul.drop{
+	position: relative;
+	z-index:594;
+	float:left;
+	list-style-type:none;
+	list-style-position:initial;
+	list-style-image:initial;
+	}
+#news-roll{
+	background-color:#ffcc00;
+	height:50px;
+	width:1200px;
+	border:1px solid #ffddcc;
+	float:left;
+}
+#content{
+	background-color:#ffcc00;
+	height:auto;
+	width:1200px;
+	border:1px solid #ffddcc;
+	float:left;
+}
+#content-utama{
+	background-color:#ffcc00;
+	width:850px;
+	float:left;
+}
+#content2{
+	background-color:#ffcc11;
+	width:335px;
+	float:right;
+}
+	.slide-image{
+	width: 840px;
+	background-color:#ffff00;
+	height: 450px;
+	margin: 3px 10px 3px 10px;
+	float:left;
+	
+	}
+	.berita{
+	width: 840px;
+	margin: 3px 10px 3px 10px;
+	background-color:#ccffcc;
+	height: 200px;
+	float:left;
+	}
+	.icon-left{
+	width: 320px;
+	margin: 3px 1px 3px 1px;
+	background-color:#ccffcc;
+	height: 80px;
+	float:left;
+	}
+	
+#roll{
+	background-color:#ffcc00;
+	height:200px;
+	width:1200px;
+	border:1px solid #ffddcc;
+	float:left;
+}
+	.box{
+	width: 191px;
+	height: 150px;
+	background-color:#fffccc;
+	margin: 0 0px 0px 8px;
+	float:left;
+	}
+#footer{
+	background-color:#ffcc00;
+	height:80px;
+	width:auto center;
+	border:1px solid #ffddcc;
+}

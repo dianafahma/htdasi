@@ -1,0 +1,45 @@
+.header {
+	background:#C0CECE;
+	width:1350px;
+	height:160px;
+	padding-top:40px;
+}
+
+.menu{
+	background:#ccffcc;
+	width:1350px;
+	height:30px;
+	padding-top:20px;
+}
+
+.menu a{
+padding-right:50px ;
+text-decoration: none;
+}
+
+.menu a:hover{
+color:#fff;
+}
+
+.content {
+	background:#C0CECE;
+	width:1350px;
+	height:400px;
+}
+
+.footer {
+	background:#ccffcc;
+	width:1350px;
+	height:80px;
+}
+
+.left {
+	width:800px;
+	float: center;
+}
+
+.datamahasiswa{
+	background:#ccffcc;
+	width:1350px;
+	height:40px;
+}
